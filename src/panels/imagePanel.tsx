@@ -1,10 +1,17 @@
 import { useState } from "react"
+import { setImageStore } from "../storages/actions/imageAction"
+import store from "../storages/store"
 
 export default function ImagePanel() {
+
+    console.log(store.getState())
+
     const [image, setImage] = useState('')
+
     const handleUpload = (e: any) => {
         setImage(URL.createObjectURL(e.currentTarget.files[0]))
     }
+
     return (
         <div>
             <div className="font-bold text-xl text-gray-700 mb-3">Photo</div>
@@ -15,6 +22,10 @@ export default function ImagePanel() {
             <div className="mt-3">
                 <img src={image} alt=""/>
             </div>
+            <button onClick={() => {
+                store.dispatch(setImageStore('haxha'))
+                console.log(store.getState().imageReducer)
+            }}>haha</button>
         </div>
     )
 }

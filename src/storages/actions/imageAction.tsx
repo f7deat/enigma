@@ -1,5 +1,8 @@
-export const selectImage = (id: number) => {
+import { ImageAction, SET_IMAGE } from "../types/imageType"
+
+export const setImageStore = (url: string): ImageAction => {
     return {
-        payload: id
+        type: SET_IMAGE,
+        payload: url
     }
 }

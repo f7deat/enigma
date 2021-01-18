@@ -1,7 +1,20 @@
+import { ImageAction, SET_IMAGE } from "../types/imageType"
+
 const initialState = {
-    value: 0
+    url: 'zz'
 }
 
-export const ImageReducer = (state = initialState, action: any) => {
-
+const imageReducer = (state = initialState, action: ImageAction) => {
+    switch (action.type) {
+        case SET_IMAGE: {
+           return {
+            ...state,
+            url: action.payload
+           }
+        }
+        default:
+          return state
+      }
 }
+
+export default imageReducer
