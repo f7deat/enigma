@@ -4,12 +4,15 @@ import store from "../storages/store"
 
 export default function ImagePanel() {
 
-    console.log(store.getState())
-
     const [image, setImage] = useState('')
 
     const handleUpload = (e: any) => {
-        setImage(URL.createObjectURL(e.currentTarget.files[0]))
+        let url = e.currentTarget.files[0]
+        setImage(URL.createObjectURL(url))
+    }
+
+    const handleClickImage = (e: any) => {
+        store.dispatch(setImageStore(e.currentTarget))
     }
 
     return (
@@ -20,12 +23,8 @@ export default function ImagePanel() {
                 <i className="fas fa-cloud-upload-alt mr-2"></i> Upload
             </label>
             <div className="mt-3">
-                <img src={image} alt=""/>
+                <img src={image} alt="" onClick={handleClickImage}/>
             </div>
-            <button onClick={() => {
-                store.dispatch(setImageStore('haxha'))
-                console.log(store.getState().imageReducer)
-            }}>haha</button>
         </div>
     )
 }

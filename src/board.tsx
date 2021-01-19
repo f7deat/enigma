@@ -1,20 +1,26 @@
 import React, { useState } from "react";
-import { Circle, Layer, Rect, Stage, Transformer } from "react-konva";
+import { Layer, Stage, Transformer, Image } from "react-konva";
+import store from "./storages/store";
 
 export default function Board() {
     const [shape, setShape] = useState<any>(null)
+    const [imageHtmlElement, setImageHtmlElement] = useState<HTMLImageElement>()
     const handleClick = (e: any) => {
         setShape(e.currentTarget)
     }
+
+    store.subscribe(() => {
+        setImageHtmlElement(store.getState().imageReducer.image)
+    })
+
     return (
         <Stage width={500} height={500} className="bg-white border border-blue-500">
             <Layer>
-                <Rect width={50} height={50} x={50} y={50} fill="#009fdc" draggable onClick={handleClick} />
-                <Circle x={200} y={200} stroke="black" radius={50} draggable onClick={handleClick} />
                 {
-                    shape && (
-                        <Transformer node={shape}/>
-                    )
+                    imageHtmlElement && <Image image={imageHtmlElement} x={100} y={100} draggable onClick={handleClick} />
+                }
+                {
+                    shape && <Transformer node={shape} />
                 }
             </Layer>
         </Stage>

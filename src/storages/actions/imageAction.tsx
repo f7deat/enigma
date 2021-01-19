@@ -1,8 +1,8 @@
 import { ImageAction, SET_IMAGE } from "../types/imageType"
 
-export const setImageStore = (url: string): ImageAction => {
+export const setImageStore = (file: any): ImageAction => {
     return {
         type: SET_IMAGE,
-        payload: url
+        payload: file
     }
 }
