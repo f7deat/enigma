@@ -4,11 +4,12 @@ import store from "../storages/store"
 
 export default function ImagePanel() {
 
-    const [image, setImage] = useState('')
+    const [images, setImages] = useState<string[]>([])
 
     const handleUpload = (e: any) => {
         let url = e.currentTarget.files[0]
-        setImage(URL.createObjectURL(url))
+        let list = [...images, URL.createObjectURL(url)]
+        setImages(list)
     }
 
     const handleClickImage = (e: any) => {
@@ -22,8 +23,16 @@ export default function ImagePanel() {
                 <input type="file" hidden accept="image/*" id="image" onChange={handleUpload} />
                 <i className="fas fa-cloud-upload-alt mr-2"></i> Upload
             </label>
-            <div className="mt-3">
-                <img src={image} alt="" onClick={handleClickImage}/>
+            <div className="overflow-auto mt-1" style={{height: 'calc(100vh - 150px)'}}>
+            {
+                images && (
+                    images.map((value) => (
+                        <div className="mb-2" key={Math.floor(Math.random() * 100)}>
+                            <img src={value} alt="" onClick={handleClickImage}/>
+                        </div>
+                    ))
+                )
+            }
             </div>
         </div>
     )
