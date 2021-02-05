@@ -2,6 +2,7 @@ import Board from './board';
 import Header from './layout/header';
 import Tool from './tools/tool';
 import ImagePanel from './panels/imagePanel';
+import './style.css';
 
 function App() {
   return (
