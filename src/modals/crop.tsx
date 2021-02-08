@@ -10,6 +10,9 @@ export default function Crop(props: any) {
     }
 
     store.subscribe(() => {
+        if (!store.getState().imageReducer.image) {
+            return;
+        }
         setImage(store.getState().imageReducer.image.currentSrc)
     })
 

@@ -5,7 +5,8 @@ import store from "./storages/store";
 
 export default function Board() {
     const [shape, setShape] = useState<any>(null)
-    const [imageHtmlElement, setImageHtmlElement] = useState<HTMLImageElement>()
+    const [imageHtmlElement, setImageHtmlElement] = useState<HTMLImageElement>();
+    const [textNode, setTextNode] = useState<any>([]);
     const handleClick = (e: Konva.KonvaEventObject<MouseEvent>) => {
         setShape(e.target)
     }
@@ -21,6 +22,10 @@ export default function Board() {
         setImageHtmlElement(store.getState().imageReducer.image)
     })
 
+    store.subscribe(() => {
+        setTextNode(store.getState().textReducer.nodes);
+    })
+
     return (
         <Stage width={500} height={500} className="bg-white border border-blue-500" onMouseDown={handleDeselect}>
             <Layer>
@@ -29,6 +34,9 @@ export default function Board() {
                 }
                 {
                     shape && <Transformer node={shape} />
+                }
+                {
+                    textNode && textNode.map((x: any) => (x))
                 }
             </Layer>
         </Stage>
