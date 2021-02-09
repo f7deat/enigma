@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.js": "/jubilant-enigma/static/js/main.0d3b7061.chunk.js",
-    "main.js.map": "/jubilant-enigma/static/js/main.0d3b7061.chunk.js.map",
-    "runtime-main.js": "/jubilant-enigma/static/js/runtime-main.5c5513b0.js",
-    "runtime-main.js.map": "/jubilant-enigma/static/js/runtime-main.5c5513b0.js.map",
-    "static/js/2.ea9618ac.chunk.js": "/jubilant-enigma/static/js/2.ea9618ac.chunk.js",
-    "static/js/2.ea9618ac.chunk.js.map": "/jubilant-enigma/static/js/2.ea9618ac.chunk.js.map",
-    "static/js/3.aaf29b1d.chunk.js": "/jubilant-enigma/static/js/3.aaf29b1d.chunk.js",
-    "static/js/3.aaf29b1d.chunk.js.map": "/jubilant-enigma/static/js/3.aaf29b1d.chunk.js.map",
+    "main.css": "/jubilant-enigma/static/css/main.b7316976.chunk.css",
+    "main.js": "/jubilant-enigma/static/js/main.75088c04.chunk.js",
+    "main.js.map": "/jubilant-enigma/static/js/main.75088c04.chunk.js.map",
+    "runtime-main.js": "/jubilant-enigma/static/js/runtime-main.bacca4ff.js",
+    "runtime-main.js.map": "/jubilant-enigma/static/js/runtime-main.bacca4ff.js.map",
+    "static/js/2.3cf913de.chunk.js": "/jubilant-enigma/static/js/2.3cf913de.chunk.js",
+    "static/js/2.3cf913de.chunk.js.map": "/jubilant-enigma/static/js/2.3cf913de.chunk.js.map",
+    "static/js/3.ecc6e1d6.chunk.js": "/jubilant-enigma/static/js/3.ecc6e1d6.chunk.js",
+    "static/js/3.ecc6e1d6.chunk.js.map": "/jubilant-enigma/static/js/3.ecc6e1d6.chunk.js.map",
     "index.html": "/jubilant-enigma/index.html",
-    "static/js/2.ea9618ac.chunk.js.LICENSE.txt": "/jubilant-enigma/static/js/2.ea9618ac.chunk.js.LICENSE.txt"
+    "static/css/main.b7316976.chunk.css.map": "/jubilant-enigma/static/css/main.b7316976.chunk.css.map",
+    "static/js/2.3cf913de.chunk.js.LICENSE.txt": "/jubilant-enigma/static/js/2.3cf913de.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5c5513b0.js",
-    "static/js/2.ea9618ac.chunk.js",
-    "static/js/main.0d3b7061.chunk.js"
+    "static/js/runtime-main.bacca4ff.js",
+    "static/js/2.3cf913de.chunk.js",
+    "static/css/main.b7316976.chunk.css",
+    "static/js/main.75088c04.chunk.js"
   ]
 }
