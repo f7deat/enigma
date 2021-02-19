@@ -1,15 +1,24 @@
-import { setNodeAction } from "../storages/actions/textAction";
+import { setTextNode } from "../storages/actions/textAction";
 import store from "../storages/store";
 import { Text } from "react-konva";
+import Konva from "konva";
+import { setTransformNode } from "../storages/actions/transformAction";
 
 const TextPanel = () => {
+
+    const handleNodeClick = (e: Konva.KonvaEventObject<MouseEvent>) => {
+        store.dispatch(setTransformNode(e.target))
+    }
+
     const handleTextClick = (e: any) => {
         let style = e.target.ownerDocument.defaultView.getComputedStyle(e.target, null);
-        let text = <Text text={e.target.innerText} draggable key={Math.random()}
+        let text = <Text text={e.target.innerText} draggable key={Math.floor(Math.random() *100)}
             fontSize={Number(style.fontSize.match(/\d+/)[0])}
             fontFamily={style.fontFamily}
-            fontStyle={`${style.fontStyle} ${style.fontWeight}`} />
-        store.dispatch(setNodeAction(text))
+            fontStyle={`${style.fontStyle} ${style.fontWeight}`}
+            onClick={handleNodeClick}
+            />
+        store.dispatch(setTextNode(text))
     }
     return (
         <div>
