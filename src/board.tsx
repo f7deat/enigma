@@ -1,44 +1,46 @@
 import Konva from "konva";
-import React, { useState } from "react";
-import { Layer, Stage, Transformer, Image } from "react-konva";
-import { setTransformNode } from "./storages/actions/transformAction";
-import store from "./storages/store";
+import { TextConfig } from "konva/types/shapes/Text";
+import React, { useEffect, useRef, useState } from "react";
+import { Layer, Stage, Transformer, Text } from "react-konva";
+import { useSelector } from "react-redux";
 
 export default function Board() {
-    const [shape, setShape] = useState<any>()
-    const [imageHtmlElement, setImageHtmlElement] = useState<HTMLImageElement>();
-    const [textNode, setTextNode] = useState<any>([]);
-    const handleClick = (e: Konva.KonvaEventObject<MouseEvent>) => {
-        store.dispatch(setTransformNode(e.target))
-    }
+    const shapeRef = useRef<any>(null)
+    const [shapeId, setShapeId] = useState<any>()
+    const trRef = useRef<any>();
+    const listText = useSelector((state: any) => state.textReducer.listText)
+
+    useEffect(() => {
+        if (shapeId) {
+          // we need to attach transformer manually
+          trRef.current.nodes([shapeRef.current]);
+          trRef.current.getLayer().batchDraw();
+        }
+      }, [shapeId]);
 
     const handleDeselect = (e: Konva.KonvaEventObject<MouseEvent>) => {
         const clickedOnEmpty = e.target === e.target.getStage();
         if (clickedOnEmpty) {
-            store.dispatch(setTransformNode({}));
-            setShape(null)
+            setShapeId(null)
           }
     }
 
-    store.subscribe(() => {
-        setImageHtmlElement(store.getState().imageReducer.image);
-        setTextNode(store.getState().textReducer.nodes);
-        if (Object.keys(store.getState().TransformReducer.node).length > 0) {
-            setShape(store.getState().TransformReducer.node);
-        }
-    })
+    const handleContextMenu = (e: any) => {
+        e.evt.preventDefault();
+        // Destroy Shape
+        //e.target.destroy()
+    }
 
     return (
         <Stage width={500} height={500} className="bg-white border border-blue-500" onMouseDown={handleDeselect}>
             <Layer>
                 {
-                    imageHtmlElement && <Image image={imageHtmlElement} x={100} y={100} draggable onClick={handleClick} />
-                }
-                {
-                    shape && <Transformer node={shape} />
-                }
-                {
-                    textNode && textNode.map((x: any) => (x))
+                    listText && listText.map((text: TextConfig, index: number) => (
+                        <React.Fragment key={index}>
+                            <Text id={text.id} ref={shapeRef} text={text.text} draggable onClick={() => setShapeId(text.id)} onContextMenu={handleContextMenu}/>
+                            <Transformer ref={trRef} id={text.id} visible={text.id === shapeId}/>
+                        </React.Fragment>
+                    ))
                 }
             </Layer>
         </Stage>

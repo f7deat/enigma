@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Crop from "../modals/crop"
+import Zoom from "./zoom"
 
 export default function Tool() {
 
@@ -21,14 +22,7 @@ export default function Tool() {
                     </div>
                     <Item icon="fas fa-fill-drip" />
                 </div>
-                <div className="flex text-sm">
-                    <div className="pr-4 py-3 text-gray-400">
-                        <i className="fas fa-search-plus"></i>
-                    </div>
-                    <div className="pr-4 py-3 text-gray-400">
-                        <i className="fas fa-search-minus"></i>
-                    </div>
-                </div>
+                <Zoom/>
             </div>
         </div>
     )
