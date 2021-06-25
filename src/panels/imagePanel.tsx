@@ -1,10 +1,12 @@
+import { ImageConfig } from "konva/types/shapes/Image"
 import { useState } from "react"
-import { setImageStore } from "../storages/actions/imageAction"
-import store from "../storages/store"
+import { useDispatch } from "react-redux"
+import { addImage } from "../storages/actions/imageAction"
 
 export default function ImagePanel() {
 
     const [images, setImages] = useState<string[]>([])
+    const dispatch = useDispatch()
 
     const handleUpload = (e: any) => {
         let url = e.currentTarget.files[0]
@@ -12,8 +14,14 @@ export default function ImagePanel() {
         setImages(list)
     }
 
-    const handleClickImage = (e: any) => {
-        store.dispatch(setImageStore(e.currentTarget))
+    const handleClickImage = (value: any, id: string) => {
+        var img = document.createElement('img');
+        img.src = value;
+        let imageConfig: ImageConfig = {
+            image: img,
+            id: id
+        }
+        dispatch(addImage(imageConfig))
     }
 
     return (
@@ -23,16 +31,14 @@ export default function ImagePanel() {
                 <input type="file" hidden accept="image/*" id="image" onChange={handleUpload} />
                 <i className="fas fa-cloud-upload-alt mr-2"></i> Upload
             </label>
-            <div className="overflow-auto mt-1" style={{height: 'calc(100vh - 150px)'}}>
-            {
-                images && (
-                    images.map((value) => (
-                        <div className="mb-2" key={Math.floor(Math.random() * 100)}>
-                            <img src={value} alt="" onClick={handleClickImage}/>
-                        </div>
+            <div className="overflow-auto mt-1" style={{ height: 'calc(100vh - 150px)' }}>
+                {
+                    images?.map((value, index) => (
+                        <button className="mb-2 bg-gray-900" key={index}>
+                            <img src={value} alt="img" onClick={() => handleClickImage(value, index.toString())} className="transition duration-700 hover:opacity-75"/>
+                        </button>
                     ))
-                )
-            }
+                }
             </div>
         </div>
     )

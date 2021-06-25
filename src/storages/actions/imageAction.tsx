@@ -1,8 +1,15 @@
-import { ImageAction, SET_IMAGE } from "../types/imageType"
+import { ADD_IMAGE, SET_IMAGE } from "../types/imageType"
 
-export const setImageStore = (file: any): ImageAction => {
+export const addImage = (payload: any) => {
+    return {
+        type: ADD_IMAGE,
+        payload
+    }
+}
+
+export const setImageAction = (payload: any) => {
     return {
         type: SET_IMAGE,
-        payload: file
+        payload
     }
 }
