@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/jubilant-enigma/static/css/main.3851a415.chunk.css",
-    "main.js": "/jubilant-enigma/static/js/main.1dfc9a77.chunk.js",
-    "main.js.map": "/jubilant-enigma/static/js/main.1dfc9a77.chunk.js.map",
+    "main.js": "/jubilant-enigma/static/js/main.c388de76.chunk.js",
+    "main.js.map": "/jubilant-enigma/static/js/main.c388de76.chunk.js.map",
     "runtime-main.js": "/jubilant-enigma/static/js/runtime-main.c017dd5d.js",
     "runtime-main.js.map": "/jubilant-enigma/static/js/runtime-main.c017dd5d.js.map",
-    "static/js/2.3d7db571.chunk.js": "/jubilant-enigma/static/js/2.3d7db571.chunk.js",
-    "static/js/2.3d7db571.chunk.js.map": "/jubilant-enigma/static/js/2.3d7db571.chunk.js.map",
+    "static/js/2.c904a32b.chunk.js": "/jubilant-enigma/static/js/2.c904a32b.chunk.js",
+    "static/js/2.c904a32b.chunk.js.map": "/jubilant-enigma/static/js/2.c904a32b.chunk.js.map",
     "static/js/3.42a54589.chunk.js": "/jubilant-enigma/static/js/3.42a54589.chunk.js",
     "static/js/3.42a54589.chunk.js.map": "/jubilant-enigma/static/js/3.42a54589.chunk.js.map",
     "index.html": "/jubilant-enigma/index.html",
     "static/css/main.3851a415.chunk.css.map": "/jubilant-enigma/static/css/main.3851a415.chunk.css.map",
-    "static/js/2.3d7db571.chunk.js.LICENSE.txt": "/jubilant-enigma/static/js/2.3d7db571.chunk.js.LICENSE.txt"
+    "static/js/2.c904a32b.chunk.js.LICENSE.txt": "/jubilant-enigma/static/js/2.c904a32b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c017dd5d.js",
-    "static/js/2.3d7db571.chunk.js",
+    "static/js/2.c904a32b.chunk.js",
     "static/css/main.3851a415.chunk.css",
-    "static/js/main.1dfc9a77.chunk.js"
+    "static/js/main.c388de76.chunk.js"
   ]
 }
