@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/style.css"],"names":[],"mappings":"AAAA,aACI,YACJ","file":"main.b7316976.chunk.css","sourcesContent":["button:focus {\r\n    outline: none;\r\n}"]}
