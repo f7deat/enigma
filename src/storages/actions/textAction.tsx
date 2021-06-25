@@ -1,5 +1,5 @@
 import { TextConfig } from "konva/types/shapes/Text"
-import { ADD_TEXT } from "../constants/text-constant"
+import { ADD_TEXT, UPDATE_TEXT } from "../types/text-type"
 
 export const setTextNode = (payload: any): any => {
     return {
@@ -18,6 +18,13 @@ export const setTextAction = (payload: string) => {
 export const addText = (payload: TextConfig) => {
     return {
         type: ADD_TEXT,
+        payload
+    }
+}
+
+export const updateText = (payload: TextConfig) => {
+    return {
+        type: UPDATE_TEXT,
         payload
     }
 }

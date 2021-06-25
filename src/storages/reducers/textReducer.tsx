@@ -1,7 +1,8 @@
-import { ADD_TEXT } from "../constants/text-constant"
+import { TextConfig } from "konva/types/shapes/Text"
+import { ADD_TEXT, UPDATE_TEXT } from "../types/text-type"
 
 const initialState: any = {
-    text: '',
+    textId: '',
     nodes: {},
     listText: []
 }
@@ -17,13 +18,20 @@ const textReducer = (state = initialState, action: any): any => {
         case 'SET_TEXT': {
             return {
                 ...state,
-                text: action.payload
+                textId: action.payload
             }
         }
         case ADD_TEXT: {
             return {
                 ...state,
                 listText: [...state.listText, action.payload]
+            }
+        }
+        case UPDATE_TEXT: {
+            state.listText.find((x: TextConfig) => x.id === action.payload.id).text = action.payload.text;
+            return {
+                ...state,
+                listText: state.listText.map((textConfig: TextConfig) => textConfig.id === action.payload.id ? textConfig = action.payload : textConfig)
             }
         }
         default:
