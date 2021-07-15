@@ -13,8 +13,11 @@ export default function Board() {
     const shapeRef = useRef<any>(null)
     const [shapeId, setShapeId] = useState<any>()
     const trRef = useRef<any>();
+
     const listText = useSelector((state: any) => state.textReducer.listText)
     const listImage = useSelector((state: any) => state.imageReducer.listImage)
+    const boardConfig = useSelector((state: any) => state.boardReducer)
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -51,7 +54,7 @@ export default function Board() {
     }
 
     return (
-        <Stage width={500} height={500} className="bg-white border border-blue-500" onMouseDown={handleDeselect}>
+        <Stage width={boardConfig.width} height={boardConfig.height} className="bg-white border border-blue-500" onMouseDown={handleDeselect}>
             <Layer>
                 {
                     listText?.map((text: TextConfig, index: number) => (

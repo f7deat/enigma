@@ -8,7 +8,7 @@ export default function Sidebar() {
                     <Link to="/"><i className="fas fa-image text-2xl"></i></Link>
                 </div>
                 <div className="text-white w-full h-16 flex justify-center items-center hover:bg-gray-900 cursor-pointer">
-                    <i className="fas fa-disease text-2xl"></i>
+                    <Link to="/draw"><i className="fas fa-disease text-2xl"></i></Link>
                 </div>
                 <div className="text-white w-full h-16 flex justify-center items-center hover:bg-gray-900 cursor-pointer">
                     <i className="fas fa-paragraph text-2xl"></i>

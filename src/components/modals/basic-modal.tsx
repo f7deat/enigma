@@ -14,7 +14,7 @@ const BasicModal: React.FunctionComponent<IModalProps> = (props) => {
       }`}
     >
       <div className="w-screen h-screen bg-gray-500 opacity-50 absolute z-10 top-0 left-0"></div>
-      <div className="h-3/4 w-1/2 bg-white absolute z-20 rounded shadow-lg">
+      <div className="h-full md:h-3/4 w-full md:w-1/2 bg-white absolute z-20 rounded shadow-lg">
         <div className="flex justify-between items-center px-3 py-1 text-gray-800">
           <div className="font-bold">{props.title}</div>
           <button

@@ -1,6 +1,6 @@
 {
-  "homepage": "https://f7deat.github.io/jubilant-enigma",
-  "name": "jubilant-enigma",
+  "homepage": "https://f7deat.github.io/enigma",
+  "name": "enigma",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
