@@ -1,6 +1,7 @@
 import { ImageConfig } from "konva/types/shapes/Image"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
+import Title from "../components/title"
 import { addImage } from "../storages/actions/imageAction"
 
 export default function ImagePanel() {
@@ -26,7 +27,7 @@ export default function ImagePanel() {
 
     return (
         <div>
-            <div className="font-bold text-xl text-gray-700 mb-3">Photo</div>
+            <Title text="Photo" />
             <label className="bg-blue-500 text-white block p-2 text-center font-bold cursor-pointer hover:bg-blue-600 shadow rounded" htmlFor="image">
                 <input type="file" hidden accept="image/*" id="image" onChange={handleUpload} />
                 <i className="fas fa-cloud-upload-alt mr-2"></i> Upload
