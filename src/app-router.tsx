@@ -1,9 +1,7 @@
 import { Route, Switch } from "react-router-dom";
-import DrawPanel from "./panels/draw/draw-panel";
+import { DrawPanel, ImagePanel, ShapePanel, TextPanel } from "./panels";
 import ImageSetting from "./panels/image/image-setting";
-import ImagePanel from "./panels/imagePanel";
 import PanelTextEdit from "./panels/text/panel-text-edit";
-import TextPanel from "./panels/textPanel";
 
 export default function AppRouter() {
     return (
@@ -19,6 +17,9 @@ export default function AppRouter() {
             </Route>
             <Route exact path="/text">
                 <TextPanel />
+            </Route>
+            <Route exact path="/shape">
+                <ShapePanel />
             </Route>
             <Route exact path="/">
                 <ImagePanel />

@@ -1,10 +1,10 @@
 import { ImageConfig } from "konva/types/shapes/Image"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import Title from "../components/title"
-import { addImage } from "../storages/actions/imageAction"
+import Title from "../../components/title"
+import { addImage } from "../../storages/actions/imageAction"
 
-export default function ImagePanel() {
+const ImagePanel: React.FC = () => {
 
     const [images, setImages] = useState<string[]>([])
     const dispatch = useDispatch()
@@ -44,3 +44,5 @@ export default function ImagePanel() {
         </div>
     )
 }
+
+export default ImagePanel

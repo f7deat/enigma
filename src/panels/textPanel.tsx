@@ -2,7 +2,7 @@ import { addText } from "../storages/actions/textAction";
 import { useDispatch } from "react-redux";
 import { TextConfig } from "konva/types/shapes/Text";
 
-const TextPanel = () => {
+const TextPanel: React.FC = () => {
 
     const dispatch = useDispatch();
 
